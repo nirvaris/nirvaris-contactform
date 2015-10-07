@@ -1,5 +1,5 @@
 =====
-Nirvaris ContacForm
+Nirvaris ContactForm
 =====
 
 A simple Django app to add a contact us form to your website.
