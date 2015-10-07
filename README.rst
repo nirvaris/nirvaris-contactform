@@ -2,32 +2,32 @@
 Nirvaris Pages
 =====
 
-A simple Django app to add pages to your website.
+A simple Django app to add a contact us form to your website.
 
-you add them via django admin interface and they will be avaliable in your website.
+It has a anti-spam engine.
 
 Quick start
 -----------
 
-To install the Pages, use pip from git:
+To install the contactform, use pip from git:
 
-pip install git+https://github.com/nirvaris/nirvaris-pages
+pip install git+https://github.com/nirvaris/nirvaris-contactform
 
-1. Add "pages" to your INSTALLED_APPS setting like this::
+1. Add "contactform" and the 'stylesnippet' to your INSTALLED_APPS setting like this::
 
     INSTALLED_APPS = (
         ...
+		'stylesnippet',
         'pages',
     )
 
-2. You have to run makemigrations and migrate, as it uses the db to store the pages content and meta-tags. 
+2. You have to run makemigrations and migrate, as it uses the db to store the messages content. 
 
 3. Copy the templates on the app's template folder to your application template folders
 	These templates are used to render the pages. You should use them for your own style
 	
 4. You can access the page on your website by
-	<your-url>/pages/<relative_url>
+	<your-url>/contact
 	
-	relative_url is a page field you set when you add a page via django admin
 	
-5. you have to add the url to your urls file:  url(r'^page/', include('pages.urls')),
+5. you have to add the url to your urls file:  url(r'^contact/', include('contactform.urls')),

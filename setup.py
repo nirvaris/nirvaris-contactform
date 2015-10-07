@@ -8,14 +8,14 @@ with open(os.path.join(os.path.dirname(__file__), 'README.rst')) as readme:
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
-    name='nirvaris-pages',
-    version='0.901',
-    packages=['pages'],
+    name='nirvaris-contactform',
+    version='0.1',
+    packages=['contactform'],
     include_package_data=True,
     license='MIT License',  # example license
-    description='A simple Django app to shave pages in the website with some meta-tags.',
+    description='A simple Django app to have a contact us form in a website.',
     long_description=README,
-    url='https://github.com/nirvaris/nirvaris-pages',
+    url='https://github.com/nirvaris/nirvaris-contactform',
     author='Juliano Binder',
     author_email='juliano.binder@gmail.com',
     classifiers=[
