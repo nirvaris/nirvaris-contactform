@@ -27,6 +27,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+EMAIL_HOST = 'mail.nirvaris.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'support@nirvaris.com'
+EMAIL_HOST_PASSWORD = ''
+EMAIL_USE_TLS = True
+EMAIL_FROM = 'support@nirvaris.com'
 
 # Application definition
 
@@ -102,3 +108,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static-files'),
+)

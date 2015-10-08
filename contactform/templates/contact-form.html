@@ -1,13 +1,25 @@
 {% extends "theme-base.html" %}
 {% load i18n %}
+{% load form_style %}
+{% load form_script %}
 
-{% block head_title %}{{ page.title }}{% endblock %}
-
-{% block item-meta-tag %}
-{% include 'theme-head-meta-item.html' with item=page %}
-{% endblock %}
+{% block head_title %}{% trans 'Contact Us' %}{% endblock %}
 
 
 {% block content %}
-{{ page.content|safe }}
+
+			<div class="row">
+				<div class="col-md-6">
+					<form method="POST" >{% csrf_token %}
+						<h4>{% trans 'Drop us an email' %}</h4>
+						{{ form|form_style}}
+						<div class="form-group">
+							{# Translators: The submit button on the comments form. #}
+							<input class="btn btn-primary btn-lg btn-block" type="submit" value="{% trans 'Send' %}">
+						</div>
+					</form>
+				</div>
+			</div>
+	{% form_script %}
+	
 {% endblock %}

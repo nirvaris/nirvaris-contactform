@@ -5,7 +5,7 @@ from django import forms
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext as _
 
-from .models import Message
+from .models import ContactMessage
 
 
 
@@ -16,7 +16,10 @@ class ContactForm(forms.ModelForm):
     anti_spam_no_hidden = forms.CharField(required=False,label='')
 
     class Meta:
-        model = Message
+        model = ContactMessage
+        fields = [
+            'name','email','message'
+        ]
 
     def anti_spam(self):
         

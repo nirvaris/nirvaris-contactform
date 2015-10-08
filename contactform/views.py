@@ -1,23 +1,42 @@
 import pdb
 
-
+from django.contrib import messages
 from django.shortcuts import render, render_to_response
 from django.template import RequestContext
-from django.views.generic.edit import FormView
+from django.utils.translation import ugettext as _
+from django.views.generic.base import View
 # Create your views here.
 
 from .forms import ContactForm
 from .models import ContactMessage
 
 
-class ContactView(FormView):
-    template_name = 'contact-form.html'
-    form_class = ChangeUserDetailsForm
-    success_url = 'contact'
+class ContactFormView(View):
+
     
-    def form_valid(self, form):
+    def get(self, request):
+        form = ContactForm()
+        form.anti_spam()
+        
+        request_context = RequestContext(request,{'form':form})
 
-        form.save()
-        messages.success(self.request,_('New details where saved'))
+        return render_to_response('contact-form.html', request_context)
 
-        return super(ChangeUserDetailsView, self).form_valid(form)    
+    def post(self, request):
+        form = ContactForm(request.POST)
+        
+        form_valid = form.is_valid()
+        cleaned_data = form.clean()
+        
+        
+
+        if form_valid:
+            form.save()
+            form = ContactForm()
+            messages.success(self.request,_('Your message was sent'))
+        
+        form.anti_spam()
+        
+        request_context = RequestContext(request,{'form':form})
+
+        return render_to_response('contact-form.html', request_context) 
