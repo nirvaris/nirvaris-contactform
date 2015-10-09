@@ -10,6 +10,8 @@ from .models import ContactMessage
 
 
 class ContactForm(forms.ModelForm):
+    
+    send_to_me = forms.BooleanField(label=_('Send a copy to me'))
 
     anti_spam_token = forms.CharField(widget=forms.HiddenInput())
     anti_spam_hidden = forms.CharField(widget=forms.HiddenInput())
@@ -18,8 +20,9 @@ class ContactForm(forms.ModelForm):
     class Meta:
         model = ContactMessage
         fields = [
-            'name','email','message'
+            'name','email','message','send_to_me'
         ]
+        labels = [_('Your Name'),_('Your E-mail'),_('Message'),_('Send a copy to me')]
 
     def anti_spam(self):
         

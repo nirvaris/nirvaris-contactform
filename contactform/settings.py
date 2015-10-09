@@ -34,6 +34,8 @@ EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = True
 EMAIL_FROM = 'support@nirvaris.com'
 
+LOGIN_URL = 'login'
+
 # Application definition
 
 INSTALLED_APPS = (
