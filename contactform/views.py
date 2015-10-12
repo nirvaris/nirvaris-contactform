@@ -7,6 +7,7 @@ from django.utils.translation import ugettext as _
 from django.views.generic.base import View
 # Create your views here.
 
+from .email import send_contact_message
 from .forms import ContactForm
 from .models import ContactMessage
 
@@ -32,6 +33,7 @@ class ContactFormView(View):
 
         if form_valid:
             form.save()
+            send_contact_message(request, form.instance)
             form = ContactForm()
             messages.success(self.request,_('Your message was sent'))
         
