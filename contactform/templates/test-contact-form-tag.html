@@ -1,0 +1,22 @@
+{% extends "theme-base.html" %}
+{% load i18n %}
+{% load form_style %}
+{% load messages_style %}
+
+{% block head_title %}{% trans 'Contact Us' %}{% endblock %}
+
+
+{% block content %}
+
+	<div class="row">
+		<div class="col-md-3">
+		</div>
+		<div class="col-md-6">
+			{{ form_tag }}
+		</div>
+		<div class="col-md-3">
+		</div>
+	</div>
+	{% form_script %}
+	
+{% endblock %}
