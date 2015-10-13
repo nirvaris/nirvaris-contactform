@@ -20,6 +20,6 @@ from .views import ContactFormView, ContactFormTag
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^form-tag$', ContactFormTag.as_view(), name='form_tag'),
+    url(r'^form-tag$', ContactFormTag.as_view(), name='form-tag'),
     url(r'^$', ContactFormView.as_view(), name='contact'),
 ]

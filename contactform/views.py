@@ -16,6 +16,32 @@ from .models import ContactMessage
 class ContactFormTag(TemplateView):
     template_name = "contact-form-tag.html"
     
+    def post(self, request):
+
+        success='true'
+        message=_('Your message was sent')
+        
+        form = ContactForm(request.POST)
+        
+        form_valid = form.is_valid()
+        cleaned_data = form.clean()
+
+        if form_valid:
+            
+            try:
+                form.save()
+                send_contact_message(request, form.instance)
+                form = ContactForm()
+
+            except:
+                success='false'
+                message=_('Ooops! We have some issues sending your e-mail')
+        
+        form.anti_spam()
+        
+        request_context = RequestContext(request,{'success':success,'message':message})
+
+        return render_to_response('contact-form-tag-ajax.html', request_context, content_type='application/json') 
 
 class ContactFormView(View):
 
@@ -33,14 +59,16 @@ class ContactFormView(View):
         
         form_valid = form.is_valid()
         cleaned_data = form.clean()
-        
-        
 
         if form_valid:
-            form.save()
-            send_contact_message(request, form.instance)
-            form = ContactForm()
-            messages.success(self.request,_('Your message was sent'))
+            
+            try:
+                form.save()
+                send_contact_message(request, form.instance)
+                form = ContactForm()
+                messages.success(self.request,_('Your message was sent'))
+            except:
+                messages.error(self.request,_('Error sending your email'))
         
         form.anti_spam()
         
