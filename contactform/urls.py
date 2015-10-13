@@ -16,9 +16,10 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
-from .views import ContactFormView
+from .views import ContactFormView, ContactFormTag
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^form-tag$', ContactFormTag.as_view(), name='form_tag'),
     url(r'^$', ContactFormView.as_view(), name='contact'),
 ]

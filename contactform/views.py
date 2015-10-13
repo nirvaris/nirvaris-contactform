@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.shortcuts import render, render_to_response
 from django.template import RequestContext
 from django.utils.translation import ugettext as _
+from django.views.generic import TemplateView
 from django.views.generic.base import View
 # Create your views here.
 
@@ -11,6 +12,10 @@ from .email import send_contact_message
 from .forms import ContactForm
 from .models import ContactMessage
 
+
+class ContactFormTag(TemplateView):
+    template_name = "contact-form-tag.html"
+    
 
 class ContactFormView(View):
 

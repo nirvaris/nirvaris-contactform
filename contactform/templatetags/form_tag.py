@@ -8,7 +8,7 @@ from ..forms import ContactForm
 
 register = template.Library()
 
-@register.inclusion_tag('contact-form.html')
+@register.inclusion_tag('contact-form-tag.html')
 def form_tag():
     form = ContactForm()
     form.anti_spam()
