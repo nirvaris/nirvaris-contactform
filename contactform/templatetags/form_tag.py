@@ -14,6 +14,3 @@ def form_tag():
     form.anti_spam()
     return {'contact_form':form}
 
-@register.inclusion_tag('form-script.html')
-def form_script():
-    return {}
