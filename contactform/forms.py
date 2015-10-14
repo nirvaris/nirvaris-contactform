@@ -11,7 +11,7 @@ from .models import ContactMessage
 
 class ContactForm(forms.ModelForm):
     
-    send_to_me = forms.BooleanField(label=_('Send a copy to me'))
+    send_to_me = forms.BooleanField(required=False, label=_('Send a copy to me'))
 
     anti_spam_token = forms.CharField(widget=forms.HiddenInput())
     anti_spam_hidden = forms.CharField(widget=forms.HiddenInput())
