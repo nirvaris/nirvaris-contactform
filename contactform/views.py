@@ -19,7 +19,6 @@ class ContactFormTag(TemplateView):
     def post(self, request):
 
         success='true'
-        message=_('Your message was sent')
         
         form = ContactForm(request.POST)
         
@@ -32,10 +31,10 @@ class ContactFormTag(TemplateView):
                 form.save()
                 send_contact_message(request, form.instance)
                 form = ContactForm()
-
+                messages.success(request,_('Your email was sent')
             except:
                 success='false'
-                message=_('Ooops! We have some issues sending your e-mail')
+                messages.error(request,_('Ooops! We have some issues sending your e-mail')
         
         form.anti_spam()
         
