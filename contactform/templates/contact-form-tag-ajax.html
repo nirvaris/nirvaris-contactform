@@ -7,7 +7,8 @@
 			{% endfor %}
 		{% endif %}
 	],
-	"form_errors":[
-		{{ form_errors }}
-	]
+	"form_errors":
+		{% if form_errors %}
+			{{ form_errors|safe }}
+		{% endif %}
 }
