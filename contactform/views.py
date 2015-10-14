@@ -14,7 +14,7 @@ from .models import ContactMessage
 
 
 class ContactFormTag(TemplateView):
-    template_name = "contact-form-tag.html"
+    template_name = "test-contact-form-tag.html"
     
     def post(self, request):
 

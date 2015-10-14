@@ -1,17 +1,16 @@
-
 {% load i18n %}
 {% load form_style %}
 {% load messages_style %}
 
-
-<form method="POST" >{% csrf_token %}
-	<h4>{% trans 'Drop us an email' %}</h4>
-	{{ messages|messages_style }}						
-	{{ form|form_style }}
-	<div class="form-group">
-		{# Translators: The submit button on the comments form. #}
-		<input class="btn btn-primary btn-lg btn-block" type="submit" value="{% trans 'Send' %}" />
-	</div>
-</form>
-
+<div ng-controller="ContactFormCtrl">
+	<form method="POST" ng-submit="sendContactMessage()">{% csrf_token %}
+		<h4>{% trans 'Drop us an email' %}</h4>
+		{{ messages|messages_style }}						
+		{{ contact_form|form_style }}
+		<div class="form-group">
+			{# Translators: The submit button on the comments form. #}
+			<input class="btn btn-primary btn-lg btn-block" type="submit" value="{% trans 'Send' %}" />
+		</div>
+	</form>
+</div>
 {% form_script %}
