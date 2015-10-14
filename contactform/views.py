@@ -31,14 +31,14 @@ class ContactFormTag(TemplateView):
                 form.save()
                 send_contact_message(request, form.instance)
                 form = ContactForm()
-                messages.success(request,_('Your email was sent')
+                messages.success(request,_('Your email was sent'))
             except:
-                success='false'
-                messages.error(request,_('Ooops! We have some issues sending your e-mail')
+                success = 'false'
+                messages.error(request,_('Ooops! We have some issues sending your e-mail'))
         
         form.anti_spam()
         
-        request_context = RequestContext(request,{'success':success,'message':message})
+        request_context = RequestContext(request,{'success':success})
 
         return render_to_response('contact-form-tag-ajax.html', request_context, content_type='application/json') 
 

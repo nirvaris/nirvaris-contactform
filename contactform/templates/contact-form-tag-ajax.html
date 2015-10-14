@@ -1,5 +1,10 @@
 {
 	"success": "{{ success }}",
-	"message": "{{ message }}",
-	"messages": [{"tag": "success", "message": "mensagem de erro"}]
+	"messages": [
+		{% if messages %}
+			{% for message in messages %}
+				{"tag": "{{ message.tags }}", "message": "{{ message|safe }}"}
+			{% endfor %}
+		{% endif %}
+	]
 }
