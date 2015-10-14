@@ -1,4 +1,4 @@
-import pdb
+import pdb,sys
 
 from django.contrib import messages
 from django.shortcuts import render, render_to_response
@@ -34,6 +34,7 @@ class ContactFormTag(TemplateView):
                 success = 'true'
                 messages.success(request,_('Thank you!! Your email was sent'))
             except:
+
                 messages.error(request,_('Ooops! We had some issues sending your e-mail'))
         
         form_errors = form.errors.as_json()
@@ -69,6 +70,7 @@ class ContactFormView(View):
                 form = ContactForm()
                 messages.success(self.request,_('Your message was sent'))
             except:
+                #pdb.set_trace()                
                 messages.error(self.request,_('Error sending your email'))
         
         form.anti_spam()
