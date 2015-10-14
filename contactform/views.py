@@ -36,7 +36,7 @@ class ContactFormTag(TemplateView):
                 success = 'false'
                 messages.error(request,_('Ooops! We had some issues sending your e-mail'))
         
-        form_errors = form.as_json()
+        form_errors = form.errors.as_json()
         
         form.anti_spam()
         

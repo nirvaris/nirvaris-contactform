@@ -14,6 +14,7 @@ def send_contact_message(request, contact_message):
     dic_for_context = {}
     dic_for_context['name'] = contact_message.name
     dic_for_context['message'] = contact_message.message
+    dic_for_context['email'] = contact_message.email
     dic_for_context['site_url'] = settings.SITE_URL
     context = RequestContext(request, dic_for_context)
 
