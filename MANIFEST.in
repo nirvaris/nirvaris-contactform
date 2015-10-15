@@ -1,5 +1,5 @@
 include LICENSE
 include README.rst
-recursive-include pages/migrations *
-recursive-include pages/templates *
+recursive-include contactform/migrations *
+recursive-include contactform/templates *
 recursive-include docs *
