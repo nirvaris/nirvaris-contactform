@@ -34,7 +34,7 @@ nirvarisControllers.controller('ContactFormCtrl', ['$scope', '$http', function (
 		$($scope.form).find('button').attr('disabled','disabled');
 		
 		// do ajax
-		$http.post('/form-tag/', $.param({ 
+		$http.post("{% url 'form-tag' %}", $.param({ 
 			name: angular.element(document.getElementsByName('name')[0]).val(),
 			email: angular.element(document.getElementsByName('email')[0]).val(),
 			message: angular.element(document.getElementsByName('message')[0]).val(),
