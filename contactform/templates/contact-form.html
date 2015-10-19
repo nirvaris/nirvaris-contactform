@@ -13,7 +13,6 @@
 		</div>
 		<div class="col-md-6">
 			<form method="POST" action="#">{% csrf_token %}
-				<h4>{% trans 'Drop us an email' %}</h4>
 				{{ messages|messages_style }}						
 				{{ form|form_style }}
 				<div class="form-group">
