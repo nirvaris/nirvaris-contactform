@@ -4,7 +4,6 @@
 
 <div ng-controller="ContactFormCtrl">
 	<form method="POST" ng-submit="sendContactMessage(this)">{% csrf_token %}
-		<h4>{% trans 'Drop us an email' %}</h4>
 		{{ messages|messages_style }}						
 		{{ contact_form|form_style }}
 		<div class="form-group">
