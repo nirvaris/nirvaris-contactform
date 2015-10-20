@@ -1,0 +1,65 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-20 13:35+0000\n"
+"PO-Revision-Date: 2015-10-20 14:34+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 1.8.5\n"
+
+#: contactform/forms.py:14 contactform/forms.py:25
+msgid "Send a copy to me"
+msgstr "Enviar uma cópia pra mim"
+
+#: contactform/forms.py:25
+msgid "Your Name"
+msgstr "Seu Nome"
+
+#: contactform/forms.py:25
+msgid "Your E-mail"
+msgstr "Seu E-mail"
+
+#: contactform/forms.py:25
+msgid "Message"
+msgstr "Mensagem"
+
+#: contactform/templates/contact-form-email-subject.txt:1
+msgid "Nirvaris Contact Form email"
+msgstr "Formulário de contato da Nirvaris"
+
+#. Translators: The submit button on the comments form.
+#: contactform/templates/contact-form-tag.html:11
+#: contactform/templates/contact-form-tag.html:16
+#: contactform/templates/contact-form.html:20
+msgid "Send"
+msgstr "Enviar"
+
+#: contactform/templates/contact-form-tag.html:14
+msgid "Sending..."
+msgstr "Enviando…"
+
+#: contactform/templates/contact-form.html:6
+#: contactform/templates/test-contact-form-tag.html:7
+msgid "Talk to Us"
+msgstr "Fale com a Gente"
+
+#: contactform/views.py:35 contactform/views.py:71
+msgid "Thank you!! We can't wait to read it!"
+msgstr "Obrigado! Estamos ansiosos para ler o que você escreveu!"
+
+#: contactform/views.py:38 contactform/views.py:74
+#, fuzzy
+#| msgid "Sorry! We could not send your email"
+msgid "Sorry! We could not send your email."
+msgstr "Desculpe! Alguma coisa deu errado."

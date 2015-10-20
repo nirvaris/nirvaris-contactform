@@ -32,10 +32,10 @@ class ContactFormTag(TemplateView):
                 send_contact_message(request, form.instance)
                 form = ContactForm()
                 success = 'true'
-                messages.success(request,_('Thank you!! Your email was sent'))
+                messages.success(request,_("Thank you!! We can't wait to read it!"))
             except:
 
-                messages.error(request,_('Ooops! We had some issues sending your e-mail'))
+                messages.error(request,_('Sorry! We could not send your email.'))
         
         form_errors = form.errors.as_json()
         
@@ -68,10 +68,10 @@ class ContactFormView(View):
                 form.save()
                 send_contact_message(request, form.instance)
                 form = ContactForm()
-                messages.success(self.request,_('Your message was sent'))
+                messages.success(self.request,_("Thank you!! We can't wait to read it!"))
             except:
                 #pdb.set_trace()                
-                messages.error(self.request,_('Error sending your email'))
+                messages.error(self.request,_('Sorry! We could not send your email.'))
         
         form.anti_spam()
         
