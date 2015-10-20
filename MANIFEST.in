@@ -4,4 +4,5 @@ recursive-include contactform/migrations *
 recursive-include contactform/templates *
 recursive-include contactform/templatetags *
 recursive-include contactform/static *
+recursive-include contactform/locale *
 recursive-include docs *
