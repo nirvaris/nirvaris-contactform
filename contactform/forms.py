@@ -3,7 +3,7 @@ import uuid
 
 from django import forms
 from django.contrib.auth.models import User
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy as _
 
 from .models import ContactMessage
 
@@ -22,7 +22,12 @@ class ContactForm(forms.ModelForm):
         fields = [
             'name','email','message','send_to_me'
         ]
-        labels = [_('Your Name'),_('Your E-mail'),_('Message'),_('Send a copy to me')]
+        labels = {
+            'name':_('Your Name'),
+            'email':_('Your E-mail'),
+            'message':_('Message'),
+            'send_to_me':_('Send a copy to me')
+        }
 
     def anti_spam(self):
         
