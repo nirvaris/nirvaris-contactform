@@ -102,7 +102,8 @@ nirvarisControllers.controller('ContactFormCtrl', ['$scope', '$http', function (
 		html += message
         html += '</div>';
 		
-		$($scope.form).find('h4').after(html);
+		//$($scope.form).find('h4').after(html);
+		$($scope.form).prepend(html);
 	};
 	
 	$scope.showFieldErrorMessage = function(fieldName, fieldErrors){
