@@ -9,7 +9,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='nirvaris-contactform',
-    version='0.313',
+    version='0.314',
     packages=['contactform'],
     include_package_data=True,
     license='MIT License',  # example license

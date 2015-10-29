@@ -1,5 +1,6 @@
 git+https://github.com/nirvaris/nirvaris-style-snippet
 git+https://github.com/nirvaris/nirvaris-theme-default
+django-smtp-ssl==1.0
 pycrypto==2.6.1
 dj-database-url==0.3.0
 dj-static==0.0.6
