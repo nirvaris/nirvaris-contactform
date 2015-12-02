@@ -9,15 +9,15 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='nirvaris-contactform',
-    version='0.314',
+    version='0.315',
     packages=['contactform'],
     include_package_data=True,
     license='MIT License',  # example license
     description='A simple Django app to have a contact us form in a website.',
     long_description=README,
     url='https://github.com/nirvaris/nirvaris-contactform',
-    author='Juliano Binder',
-    author_email='juliano.binder@gmail.com',
+    author='Nirvaris',
+    author_email='contact@nirvaris.com',
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',

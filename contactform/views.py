@@ -1,5 +1,7 @@
 import pdb,sys
 
+from threading import Thread
+
 from django.contrib import messages
 from django.shortcuts import render, render_to_response
 from django.template import RequestContext
@@ -29,7 +31,8 @@ class ContactFormTag(TemplateView):
             
             try:
                 form.save()
-                send_contact_message(request, form.instance)
+                thread = Thread(target=send_contact_message, args=(request, form.instance))
+                thread.start()
                 form = ContactForm()
                 success = 'true'
                 messages.success(request,_("Thank you!! We can't wait to read it!"))
@@ -66,7 +69,8 @@ class ContactFormView(View):
             
             try:
                 form.save()
-                send_contact_message(request, form.instance)
+                thread = Thread(target=send_contact_message, args=(request, form.instance))
+                thread.start()
                 form = ContactForm()
                 messages.success(self.request,_("Thank you!! We can't wait to read it!"))
             except:
