@@ -1,6 +1,6 @@
 {% load i18n %}
-{% load form_style %}
-{% load messages_style %}
+{% load theme_form_tags %}
+{% load theme_messages_tags %}
 
 <div ng-controller="ContactFormCtrl">
 	<form method="POST" ng-submit="sendContactMessage(this)">{% csrf_token %}
