@@ -10,7 +10,7 @@ It uses the follow dependecies from Nirvaris:
 - [Nirvaris Default Theme](https://github.com/nirvaris/nirvaris-theme-default)
 
 #Quick start
--
+
 
 To install the contactform, use pip from git:
 
