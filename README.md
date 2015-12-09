@@ -23,8 +23,8 @@ pip install git+https://github.com/nirvaris/nirvaris-contactform
 ```
     INSTALLED_APPS = (
         ...
-      'themedefault',
-		'contactform',
+        'themedefault',
+        'contactform',
     )
 ```
 
