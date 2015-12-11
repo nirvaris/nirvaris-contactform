@@ -36,6 +36,12 @@ pip install git+https://github.com/nirvaris/nirvaris-contactform
 url(r'^contact/', include('contactform.urls')),
 ```
 
+- You have to add your email asddress to your settings
+
+```
+NIRVARIS_CONTACTFORM_EMAIL_TO_CONTACT = ''
+```
+
 - There are two ways to use it. You can access the page on your website by the url. It will use the look and feel of the theme
 
 ```	
