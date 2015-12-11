@@ -10,11 +10,11 @@ from django.template.loader import render_to_string
 
 from .models import ContactMessage
 
-NIRVARIS_CONTACTFORM_PRODUCT_NAME = 'Nirvaris Contact Form'
+NIRVARIS_CONTACTFORM_SUBJECT = 'Nirvaris Contact Form'
 
 if hasattr(settings, 'PRODUCT_NAME'):
-    if settings.NIRVARIS_CONTACTFORM_PRODUCT_NAME:
-        NIRVARIS_CONTACTFORM_PRODUCT_NAME = settings.NIRVARIS_CONTACTFORM_PRODUCT_NAME
+    if settings.NIRVARIS_CONTACTFORM_SUBJECT:
+        NIRVARIS_CONTACTFORM_SUBJECT = settings.NIRVARIS_CONTACTFORM_SUBJECT
 
 
 def send_contact_message(request, contact_message):
@@ -24,7 +24,7 @@ def send_contact_message(request, contact_message):
     dic_for_context['name'] = contact_message.name
     dic_for_context['message'] = contact_message.message
     dic_for_context['email'] = contact_message.email
-    dic_for_context['product_name'] = NIRVARIS_CONTACTFORM_PRODUCT_NAME
+    dic_for_context['product_name'] = NIRVARIS_CONTACTFORM_SUBJECT
 
     context = RequestContext(request, dic_for_context)
 

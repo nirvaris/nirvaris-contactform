@@ -40,6 +40,7 @@ url(r'^contact/', include('contactform.urls')),
 
 ```
 NIRVARIS_CONTACTFORM_EMAIL_TO_CONTACT = ''
+NIRVARIS_CONTACTFORM_SUBJECT = '' #optional
 ```
 
 - There are two ways to use it. You can access the page on your website by the url. It will use the look and feel of the theme
