@@ -69,7 +69,7 @@ class ContactFormView(View):
             
             try:
                 form.save()
-                thread = Thread(target=send_contact_message, args=(request, form.instance))
+                thread = Thread(target=send_contact_message, args=(form.instance,))
                 thread.start()
                 form = ContactForm()
                 messages.success(self.request,_("Thank you!! We can't wait to read it!"))

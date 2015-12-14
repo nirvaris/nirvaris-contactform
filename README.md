@@ -36,11 +36,21 @@ pip install git+https://github.com/nirvaris/nirvaris-contactform
 url(r'^contact/', include('contactform.urls')),
 ```
 
-- You have to add your email asddress to your settings
+- As it sends emails for account activation and forgot password, you have to setup your SMTP details in your settings. [Django docs for sending emails](https://docs.djangoproject.com/en/1.9/topics/email/)
 
 ```
-NIRVARIS_CONTACTFORM_EMAIL_TO_CONTACT = ''
-NIRVARIS_CONTACTFORM_SUBJECT = '' #optional
+EMAIL_HOST = ''
+EMAIL_PORT = 465
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+EMAIL_USE_TLS = True
+```
+- You have to add your email asddress to your settings
+```
+NV_CONTACTFORM_SUBJECT = '' # optional: the subject of the email
+NV_CONTACTFORM_FROM = '' # The address which the email will be sent from
+NV_CONTACTFORM_SEND_TO = '' # The address which the app you send the email to
+
 ```
 
 - There are two ways to use it. You can access the page on your website by the url. It will use the look and feel of the theme
