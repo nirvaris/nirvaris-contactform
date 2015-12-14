@@ -45,13 +45,12 @@ EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = True
 ```
-
 - You have to add your email asddress to your settings
 
 ```
 NV_SEND_TO = '' # optional: the subject of the email
 NV_EMAIL_FROM = '' # The address which the email will be sent from
-NV_CONTACTFORM_SUBJECT = '' # The address which the app you send the email to
+NV_CONTACTFORM_SUBJECT = '' # The subject for the email to be sent
 
 ```
 
