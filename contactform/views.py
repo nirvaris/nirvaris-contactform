@@ -31,7 +31,7 @@ class ContactFormTag(TemplateView):
             
             try:
                 form.save()
-                thread = Thread(target=send_contact_message, args=(request, form.instance))
+                thread = Thread(target=send_contact_message, args=(form.instance,))
                 thread.start()
                 form = ContactForm()
                 success = 'true'

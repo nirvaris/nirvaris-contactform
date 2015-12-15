@@ -41,10 +41,10 @@ class SeleniumTestCase(LiveServerTestCase):
         input_email.send_keys('jack@daniels.com')
         input_message.send_keys('Jack killer propper rock and roller drink')            
         
-        submit_button = WebDriverWait(browser, 10).until( lambda browser: browser.find_element_by_xpath("//button"))
-        
+        submit_button = WebDriverWait(browser, 10).until( lambda browser: browser.find_element_by_xpath("//button[@id='id_button_submit_contact_form']"))
+        #pdb.set_trace()
         submit_button.click()
-        pdb.set_trace()
+        
 
         self.assertEqual(len(mail.outbox), 1,'No email sent')
 
@@ -66,10 +66,10 @@ class SeleniumTestCase(LiveServerTestCase):
         input_email.send_keys('jack@daniels.com')
         input_message.send_keys('Jack killer propper rock and roller drink')            
         
-        submit_button = WebDriverWait(browser, 10).until( lambda browser: browser.find_element_by_xpath("//button"))
-        
+        submit_button = WebDriverWait(browser, 10).until( lambda browser: browser.find_element_by_xpath("//button[@id='id_button_submit_contact_form']"))
+        #pdb.set_trace()
         submit_button.click()
-        pdb.set_trace()
+        
         self.assertEqual(len(mail.outbox), 1,'No email sent')
 
         
