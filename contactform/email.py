@@ -18,7 +18,7 @@ if hasattr(settings, 'NV_CONTACTFORM_SUBJECT'):
 
 
 def send_contact_message(contact_message):
-    
+
     #pdb.set_trace()
     dic_for_context = {}
     dic_for_context['name'] = contact_message.name
@@ -28,18 +28,16 @@ def send_contact_message(contact_message):
 
     #context = RequestContext(request, dic_for_context)
 
-    subject = render_to_string('contact-form-email-subject.txt', dic_for_context)
-    template = render_to_string('contact-form-email-body.html', dic_for_context)
+    subject = render_to_string('email-subject-contact-form.txt', dic_for_context)
+    template = render_to_string('email-body-contact-form.html', dic_for_context)
 
     msg = EmailMessage(subject, template, settings.NV_EMAIL_FROM, [settings.NV_SEND_TO])
 
-    msg.content_subtype = "html"  
+    msg.content_subtype = "html"
     msg.send()
-    
+
     if contact_message.send_to_me:
         msg = EmailMessage(subject, template, settings.NV_EMAIL_FROM, [contact_message.email])
 
-        msg.content_subtype = "html"  
-        msg.send()        
-    
-
+        msg.content_subtype = "html"
+        msg.send()
