@@ -46,10 +46,10 @@ class ContactFormTagView(TemplateView):
 
         data_context = {'success':success,'form_errors':form_errors}
 
-        return render_to_response('tag-contact-form-ajax.html', data_context, content_type='application/json')
+        return render(self.template_name, data_context, content_type='application/json')
 
 class ContactFormView(View):
-
+    template_name = 'contact-form.html'
 
     def get(self, request):
         form = ContactForm()
@@ -57,7 +57,7 @@ class ContactFormView(View):
 
         data_context = {'form':form}
 
-        return render_to_response('contact-form.html', data_context)
+        return render(self.template_name, data_context)
 
     def post(self, request):
         form = ContactForm(request.POST)
@@ -81,4 +81,4 @@ class ContactFormView(View):
 
         data_context = {'form':form}
 
-        return render_to_response('contact-form.html', data_context)
+        return render(self.template_name, data_context)
