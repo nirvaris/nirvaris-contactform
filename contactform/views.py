@@ -3,8 +3,8 @@ import pdb,sys
 from threading import Thread
 
 from django.contrib import messages
-from django.shortcuts import render, render_to_response
-from django.template import RequestContext
+from django.shortcuts import render
+#from django.template import RequestContext
 from django.utils.translation import ugettext as _
 from django.views.generic import TemplateView
 from django.views.generic.base import View
@@ -44,9 +44,9 @@ class ContactFormTagView(TemplateView):
 
         form.anti_spam()
 
-        request_context = RequestContext(request,{'success':success,'form_errors':form_errors})
+        data_context = {'success':success,'form_errors':form_errors}
 
-        return render_to_response('tag-contact-form-ajax.html', request_context, content_type='application/json') 
+        return render_to_response('tag-contact-form-ajax.html', data_context, content_type='application/json')
 
 class ContactFormView(View):
 
@@ -55,9 +55,9 @@ class ContactFormView(View):
         form = ContactForm()
         form.anti_spam()
 
-        request_context = RequestContext(request,{'form':form})
+        data_context = {'form':form}
 
-        return render_to_response('contact-form.html', request_context)
+        return render_to_response('contact-form.html', data_context)
 
     def post(self, request):
         form = ContactForm(request.POST)
@@ -79,6 +79,6 @@ class ContactFormView(View):
 
         form.anti_spam()
 
-        request_context = RequestContext(request,{'form':form})
+        data_context = {'form':form}
 
-        return render_to_response('contact-form.html', request_context)
+        return render_to_response('contact-form.html', data_context)
