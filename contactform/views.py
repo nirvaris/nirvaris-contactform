@@ -20,7 +20,7 @@ class ContactFormTagView(TemplateView):
 
     def post(self, request):
 
-        pdb.set_trace()
+        #pdb.set_trace()
         success='false'
 
         form = ContactForm(request.POST)
